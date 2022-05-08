@@ -6,4 +6,4 @@
 
 # Correct or not and why?  
 Not Correct  
-Time limit exceeded  
+Time limit exceeded in some test cases  

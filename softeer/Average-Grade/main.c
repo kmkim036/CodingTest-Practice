@@ -3,32 +3,27 @@
 
 int main()
 {
+    int i, j;
+
     int N, K;
-    int i = 0, j;
-    scanf("%d %d ", &N, &K);
+    scanf("%d %d\n", &N, &K);
 
-    int* arr = (int*)malloc(sizeof(int) * N);
+    int* grade = malloc(sizeof(int) * N);
+    i = 0;
     do {
-        scanf("%d", arr + (i++));
-    } while (getc(stdin) == ' ');
+        scanf("%d", &grade[i++]);
+    } while (i < N);
 
-    int* start = (int*)malloc(sizeof(int) * K);
-    int* end = (int*)malloc(sizeof(int) * K);
+    int start, end, sum;
     for (i = 0; i < K; i++) {
-        scanf("%d %d", start + i, end + i);
+        scanf("%d %d\n", &start, &end);
+        sum = 0;
+        for (j = start - 1; j < end; j++)
+            sum += grade[j];
+        printf("%.2lf\n", (double)sum / (end - start + 1));
     }
 
-    for (i = 0; i < K; i++) {
-        int sum = 0;
-        for (j = start[i]; j <= end[i]; j++) {
-            sum += arr[j - 1];
-        }
-        printf("%.2lf\n", ((double)sum / (end[i] - start[i] + 1)));
-    }
-
-    free(arr);
-    free(start);
-    free(end);
+    free(grade);
 
     return 0;
 }

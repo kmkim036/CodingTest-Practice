@@ -9,7 +9,7 @@ int main(void)
 
     int* Weight = (int*)malloc(sizeof(int) * N);
     int* Price = (int*)malloc(sizeof(int) * N);
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
         scanf("%d %d\n", Weight + i, Price + i);
 
     int sum_weight = 0, sum_price = 0;

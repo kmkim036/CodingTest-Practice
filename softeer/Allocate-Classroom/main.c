@@ -18,9 +18,9 @@ int main(void)
 
     char swap;
     int* temp;
-    for (i = 0; i < N; i++) {
+    for (i = 1; i < N; i++) {
         swap = 'N';
-        for (j = 0; j < N - 1; j++) {
+        for (j = 0; j < N - i; j++) {
             if (Schedule[j][0] > Schedule[j + 1][0]) {
                 temp = *(Schedule + j);
                 *(Schedule + j) = *(Schedule + j + 1);

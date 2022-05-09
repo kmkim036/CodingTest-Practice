@@ -79,7 +79,12 @@ int main(void)
             printf("-----\n");
     }
 
+    for (i = 0; i < N; i++)
+        free(Name[i]);
     free(Name);
+
+    for (i = 0; i < N; i++)
+        free(time_table[i]);
     free(time_table);
 
     return 0;

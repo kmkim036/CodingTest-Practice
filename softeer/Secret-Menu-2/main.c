@@ -36,6 +36,8 @@ int main(void)
 
     free(A);
     free(B);
+    for (i = 0; i < N; i++)
+        free(C[i]);
     free(C);
 
     return 0;

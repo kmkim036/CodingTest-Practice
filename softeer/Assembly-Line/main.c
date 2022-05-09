@@ -41,6 +41,8 @@ int main(void)
     else
         printf("%d", totalB);
 
+    for (i = 0; i < N; i++)
+        free(line[i]);
     free(line);
 
     return 0;

@@ -11,19 +11,25 @@ int main(void)
     scanf("%d\n", &N);
 
     int** Schedule = malloc(sizeof(int*) * N);
-    for (int i = 0; i < N; i++) {
+    for (i = 0; i < N; i++) {
         Schedule[i] = malloc(sizeof(int) * 2);
         scanf("%d %d", *(Schedule + i) + 0, *(Schedule + i) + 1);
     }
 
+    char swap;
+    int* temp;
     for (i = 0; i < N; i++) {
+        swap = 'N';
         for (j = 0; j < N - 1; j++) {
             if (Schedule[j][0] > Schedule[j + 1][0]) {
-                int* temp = *(Schedule + j);
+                temp = *(Schedule + j);
                 *(Schedule + j) = *(Schedule + j + 1);
                 *(Schedule + j + 1) = temp;
+                swap = 'Y';
             }
         }
+        if (swap == 'N')
+            break;
     }
 
     for (int i = 0; i < N; i++) {
@@ -36,6 +42,9 @@ int main(void)
     }
 
     printf("%d", counts);
+
+    for (i = 0; i < N; i++)
+        free(Schedule[i]);
     free(Schedule);
 
     return 0;

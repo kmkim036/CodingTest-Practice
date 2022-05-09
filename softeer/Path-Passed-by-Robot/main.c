@@ -123,6 +123,8 @@ int main(void)
     printf("%d %d\n", i, j);
     move(i, j, 0);
 
+    for (i = 0; i < 2 + H; i++)
+        free(arr[i]);
     free(arr);
 
     return 0;

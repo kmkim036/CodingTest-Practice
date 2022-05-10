@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// 어떻게 cost를 가장 적게 가져갈까
+// Q: 어떻게 cost를 가장 적게 가져갈까
+
 // a의 순서를 바꾸는 과정에서 b가 같은 경우는 필연적으로 생긴다.
 // 이외의 불필요한 swap이 없도록 해야 한다.
 // 최적화된 버블정렬을 사용하자
@@ -46,6 +47,9 @@ int main()
     }
 
     printf("%d\n", cost);
+
+    free(a);
+    free(b);
 
     return 0;
 }

@@ -28,10 +28,10 @@ void move(int i, int j, int dir)
             dir = 3;
             arr[i + 1][j] = 0;
             move(i + 2, j, dir);
-        } else {
+        } else if (arr[i][j - 1]) {
             printf("<\nA");
             dir = 4;
-            arr[i][j + 1] = 0;
+            arr[i][j - 1] = 0;
             move(i, j - 2, dir);
         }
     } else {
